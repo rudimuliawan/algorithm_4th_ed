@@ -21,10 +21,7 @@ class QuickUnion:
         return self.get_root(p) == self.get_root(q)
 
     def union(self, p, q):
-        i = self.get_root(self.id[p])
-        j = self.get_root(self.id[q])
+        i = self.get_root(p)
+        j = self.get_root(q)
 
-        if i < j:
-            self.id[i] = j
-        else:
-            self.id[j] = i
+        self.id[i] = j
